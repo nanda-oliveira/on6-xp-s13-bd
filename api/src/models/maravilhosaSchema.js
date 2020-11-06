@@ -40,8 +40,10 @@ const maravilhosaSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-},
-    { collection: 'maravilhosa'}
+},{
+    collection : 'maravilhosa',
+    versionKey : false
+}
 );
 
 
