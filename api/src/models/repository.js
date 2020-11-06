@@ -1,4 +1,6 @@
 const mongoose = require("mongoose") //conexão com bancos de dados
+mongoose.Promise = global.Promise;
+
 
 const DB_URL = "mongodb://localhost:27017/reprograma"  //caminho do banco de dados,string de conexão padrão do mongoDB
 

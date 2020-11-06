@@ -1,4 +1,4 @@
-const maravilhosaCollection = require('../models/maravilhosas-models')
+//const maravilhosaCollection = require('../models/maravilhosas-models')
 const maravilhosaCollection = require("../models/maravilhosaSchema")
 
 
@@ -23,22 +23,25 @@ const getMaravilhosaById =  (req,res) => {
 
 //addMaravilhosa 
 const addMaravilhosa = (req,res) => {
+    console.log(req.url)
+    const maravilhosaBody = req.body
+    const maravilhosa = new maravilhosaCollection(maravilhosaBody)
 
-    const {error} = model.insertData(req.body)
-    if(error === null) {
-        res.status(201).json("Registro adicionado com sucesso");
-    } else {
-        res.status(400).json({"message": error.message})
+    maravilhosa.save((error) => {
+        if(error){
+            return res.status(400).send(error)
+        }else{
+            return res.status(201).send(maravilhosa)
+        }
     }
-}
+   
+    )}
+
 //updateMaravilhosa 
 const updateMaravilhosa = (req, res) => {
-    const {error, data} = model.updateData(req.params.id, req.body  )
-     if(error=== null) {
-         res.status(201).send(data)
-    } else {
-        res.status(404).json({"message": error.message})
-    }
+    const idParam = req.params.id
+    const maravilhosaBody = req.body
+    const novo = {new:true}
     
 }
 

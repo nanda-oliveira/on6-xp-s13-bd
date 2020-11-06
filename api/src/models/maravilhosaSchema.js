@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const schema =mongoose.schema
+const Schema =mongoose.Schema
 
 const maravilhosaSchema = new mongoose.Schema({
     _id: {
@@ -40,8 +40,11 @@ const maravilhosaSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-})
+},
+    { collection: 'maravilhosa'}
+);
 
-const maravilhosaCollection = mongoose.model('maravilhosa', maravilhosaScrema)
+
+const maravilhosaCollection = mongoose.model('maravilhosa', maravilhosaSchema)
 
 module.exports = {maravilhosaCollection}
