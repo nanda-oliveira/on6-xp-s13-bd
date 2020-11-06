@@ -1,4 +1,6 @@
-const model = require('../models/maravilhosas-models')
+const maravilhosaCollection = require('../models/maravilhosas-models')
+const maravilhosaCollection = require("../models/maravilhosaSchema")
+
 
 const getMaravilhosas =  (req,res) => {
     const { error, data } = model.selectAllData()

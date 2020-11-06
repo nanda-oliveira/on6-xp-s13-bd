@@ -1,5 +1,5 @@
 const fs = require('fs')
-let allData = require('../data/data.json')
+let allData = require('../models/maravilhosaSchema')
 
 const selectAllData = () => {
     if(allData){
